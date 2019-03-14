@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- The Basics -->
+    <parent>
+        <groupId>org.orbisgis</groupId>
+        <artifactId>orbistuto</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>learn-groovy</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- Dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>org.orbisgis</groupId>
+            <artifactId>data-manager</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.orbisgis</groupId>
+            <artifactId>process-manager</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+    </dependencies>
+
+    <!-- More Project Information -->
+    <name>LearnGroovy</name>
+    <description>Groovy tutorial</description>
+    <url>https://github.com/orbisgis/LearnGroovy</url>
+    <licenses>
+        <license>
+            <name>The GNU General Public License, Version 3.0</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <organization>
+        <name>Lab-STICC - CNRS UMR 6285</name>
+        <url>https://www.labsticc.fr</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>Erwan Bocher</name>
+            <id>ebocher</id>
+            <url>https://github.com/ebocher</url>
+            <organization>Lab-STICC - CNRS UMR 6285</organization>
+            <organizationUrl>Lab-STICC - CNRS UMR 6285</organizationUrl>
+        </developer>
+        <developer>
+            <name>Sylvain Palominos</name>
+            <id>SPalominos</id>
+            <url>https://github.com/spalominos</url>
+            <organization>Lab-STICC - CNRS UMR 6285</organization>
+            <organizationUrl>Lab-STICC - CNRS UMR 6285</organizationUrl>
+        </developer>
+    </developers>
+
+</project>
