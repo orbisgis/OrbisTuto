@@ -1,0 +1,8 @@
+2019-03-13 16:11:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "GEOMETRY_COLUMNS" non trouvée
+Table "GEOMETRY_COLUMNS" not found; SQL statement:
+SELECT * FROM "PUBLIC"."GEOMETRY_COLUMNS" LIMIT 0; [42102-197]
+2019-03-13 16:11:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "EUROPE" non trouvée
+Table "EUROPE" not found; SQL statement:
+SELECT ST_XMax(ST_Envelope(ST_Accum(THE_GEOM))), ST_XMin(ST_Envelope(ST_Accum(THE_GEOM))), ST_YMax(ST_Envelope(ST_Accum(THE_GEOM))), ST_YMin(ST_Envelope(ST_Accum(THE_GEOM)))  FROM europe   [42102-197]
