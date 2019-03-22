@@ -1,10 +1,7 @@
 package org.orbisgis.tutorial.utils.solutions
 
 import groovy.transform.BaseScript
-import org.locationtech.jts.geom.Geometry
-import org.orbisgis.datamanager.JdbcDataSource
 import org.orbisgis.datamanager.h2gis.H2GIS
-import org.orbisgis.datamanager.postgis.POSTGIS
 import org.orbisgis.processmanager.ProcessManager
 import org.orbisgis.processmanager.ProcessMapper
 import org.orbisgis.tutorial.utils.TutorialScript
@@ -86,7 +83,7 @@ int[] getRandomPoint(int[] maxMin) {
 processGetRandomPoint = factory.create('getRandomPoint', [coordinates : int[]], [pointOut : int[]], { int[] coordinates ->
     def rd = new Random()
     int[] pt = [rd.nextInt() % (coordinates[0] - coordinates[1]) + coordinates[1],
-            rd.nextInt() % (coordinates[2] - coordinates[3]) + coordinates[3]]
+                rd.nextInt() % (coordinates[2] - coordinates[3]) + coordinates[3]]
     [pointOut: pt]
 })
 
@@ -139,12 +136,13 @@ processSearchCountry = factory.create('searchCountry', [h2gis : H2GIS, 'pt' : in
         }
 )
 
-def mapper = new ProcessMapper([
-        [h2gisOut : processInit, h2gis : processGetBox],
-        [coordinatesOut : processGetBox, coordinates : processGetRandomPoint],
-        [h2gisOut : processInit, h2gis : processSearchCountry], [pointOut : processGetRandomPoint, pt : processSearchCountry],
-        [h2gisOut : processInit, h2gis : processSayHello], [countryOut : processSearchCountry, country : processSayHello]
-])
+def mapper = new ProcessMapper()
+mapper.link(h2gisOut : processInit, h2gis : processGetBox)
+mapper.link(coordinatesOut : processGetBox, coordinates : processGetRandomPoint)
+mapper.link(h2gisOut : processInit, h2gis : processSearchCountry)
+mapper.link(pointOut : processGetRandomPoint, pt : processSearchCountry)
+mapper.link(h2gisOut : processInit, h2gis : processSayHello)
+mapper.link(countryOut : processSearchCountry, country : processSayHello)
 
 while(true) {
     mapper.execute()
